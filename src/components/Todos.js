@@ -1,10 +1,21 @@
-import React from 'react'
+//holds all of our todos 
+
+import React from 'react';
+import Todo from './Todo';
+import { List, ListItem, ListItemText  } from '@mui/material';
 
 function Todos(props) {
+ 
   return (
-    <div>
-      <li>{props.todos}</li>
-    </div>
+    <List>
+    <ListItem>
+
+    <Todo />
+                  
+     <ListItemText primary={props.todos} secondary="deadline"/>
+
+     </ListItem>
+    </List>
   )
 }
 
