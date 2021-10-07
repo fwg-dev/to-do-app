@@ -11,7 +11,7 @@ function Form({todos, setTodos}) {
     const addTodo = (event) => {
       //happens when we click the button
       event.preventDefault(); //Prevents form from refresshing everytime we click submit
-      setTodos([...todos, input]);
+      setTodos([...todos, {text: input, completed: false, id: Math.random() * 1000 }]);
       setInput(""); //clears input, sets it back to blank
     };
 
@@ -41,12 +41,12 @@ function Form({todos, setTodos}) {
         Add todo
       </Button>
 
-      <ul>
+      {/* <ul>
         {todos.map((todo) => (
           <Todos todos={todo} />
           //<li>{todo}</li>
         ))}
-      </ul>
+      </ul> */}
 
   </div>
   );
