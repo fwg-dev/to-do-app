@@ -10,7 +10,7 @@ function Todo({todos}) {
     <div>
       <List>
       <ListItem primary={todos} secondary="deadline">
-{todos}
+     {todos}
         <Checkbox />
            <IconButton edge="end" aria-label="delete">
                <DeleteIcon />
