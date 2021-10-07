@@ -5,12 +5,12 @@ import React from "react";
 import { List, ListItem, ListItemText, IconButton, Checkbox } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-function Todo({todos}) {
+function Todo({text}) {
   return (
     <div>
       <List>
-      <ListItem primary={todos} secondary="deadline">
-     {todos}
+      <ListItem primary={text} secondary="deadline">
+     {text}
         <Checkbox />
            <IconButton edge="end" aria-label="delete">
                <DeleteIcon />

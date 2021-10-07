@@ -12,7 +12,7 @@ function Todos({todos}) {
 
     <ul>
         {todos.map((todo) => (
-          <Todo todos={todos} />
+          <Todo text={todos.text} />
         ))}
       </ul>
 
