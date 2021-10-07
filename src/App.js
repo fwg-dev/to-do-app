@@ -23,7 +23,7 @@ function App() {
     
 
       <Form todos={todos} setTodos={setTodos} />
-      {/* <Todos /> */}
+      <Todos todos={todos}   />
      
     </div>
   );
