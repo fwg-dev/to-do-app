@@ -8,12 +8,9 @@ import Todos from "./components/Todos";
 function App() {
   
   
-  const [todos, setTodos] = useState([
-    "Build a todo app",
-    "Build a static login page",
-    "Brush up on React fundamentals",
-    "make a dental appointment",
-  ]);
+  const [todos, setTodos] = useState([]);
+  const [status, setStatus] = useState("all");
+
 
   return (
     <div className="App">
@@ -22,8 +19,8 @@ function App() {
     </header>
     
 
-      <Form todos={todos} setTodos={setTodos} />
-      <Todos todos={todos}   />
+      <Form todos={todos} setTodos={setTodos} setStatus={setStatus} />
+      <Todos todos={todos} setTodos={setTodos}   />
      
     </div>
   );
