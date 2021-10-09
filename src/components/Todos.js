@@ -4,15 +4,22 @@ import React from 'react';
 import Todo from './Todo';
 import { List, ListItem, ListItemText  } from '@mui/material';
 
-function Todos({todos}) {
+function Todos({text, todos, todo, setTodos}) {
  
   return (
-    <List>
+    <div>
+        <List>
     <ListItem>
 
     <ul>
         {todos.map((todo) => (
-          <Todo text={todos.text} />
+          <Todo 
+            todos={todos}
+             setTodos={setTodos}
+             text={todo.text} 
+             todo={todo}
+              key={todo.id}/>
+              
         ))}
       </ul>
 
@@ -22,6 +29,9 @@ function Todos({todos}) {
 
      </ListItem>
     </List>
+
+    </div>
+
   )
 }
 
