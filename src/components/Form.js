@@ -1,30 +1,42 @@
 import React, { useState, useEffect } from "react";
-import { Button, FormControl, InputLabel, Input } from "@mui/material";
+import {
+  FormControl,
+  InputLabel,
+  Input,
+  NativeSelect,
+  IconButton,
+} from "@mui/material";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
 
 import Todos from "./Todos";
 
-function Form({todos, setTodos}) {
+function Form({ todos, setTodos }) {
+  const [input, setInput] = useState("");
+  // console.log(input);
 
-    const [input, setInput] = useState("");
-    // console.log(input);
-  
-    const addTodo = (event) => {
-      //happens when we click the button
-      event.preventDefault(); //Prevents form from refresshing everytime we click submit
-      setTodos([...todos, {text: input, completed: false, id: Math.random() * 1000 }]);
-      setInput(""); //clears input, sets it back to blank
-    };
+  const addTodo = (event) => {
+    //happens when we click the button
+    event.preventDefault(); //Prevents form from refresshing everytime we click submit
+    setTodos([
+      ...todos,
+      { text: input, completed: false, id: Math.random() * 1000 },
+    ]);
+    setInput(""); //clears input, sets it back to blank
+  };
 
-    // useEffect(() => {
-    //   effect
-    //   return () => {
-    //     cleanup
-    //   }
-    // }, [input])
-  
+  const StatusHandler = (event) => {
+    console.log(event);
+  };
+  // useEffect(() => {
+  //   effect
+  //   return () => {
+  //     cleanup
+  //   }
+  // }, [input])
+
   return (
     <div>
-    <FormControl>
+      <FormControl>
         <InputLabel>Write your task here</InputLabel>
         <Input
           value={input}
@@ -32,25 +44,23 @@ function Form({todos, setTodos}) {
         />
       </FormControl>
 
-      <Button
+      <IconButton
         disabled={!input}
         variant="contained"
         type="submit"
         onClick={addTodo}
       >
-        Add todo
-      </Button>
+        <AddCircleIcon />
+      </IconButton>
+      
+      <NativeSelect>
+        <option> All</option>
+        <option> Completed</option>
+        <option> Not Completed</option>
+      </NativeSelect>
 
-      {/* <ul>
-        {todos.map((todo) => (
-          <Todos todos={todo} />
-          //<li>{todo}</li>
-        ))}
-      </ul> */}
-
-  </div>
+    </div>
   );
 }
-
 
 export default Form;
