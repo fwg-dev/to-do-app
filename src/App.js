@@ -19,7 +19,7 @@ function App() {
     </header>
     
 
-      <Form todos={todos} setTodos={setTodos} setStatus={setStatus} />
+      <Form todos={todos} setTodos={setTodos} setStatus={setStatus} ad/>
       <Todos todos={todos} setTodos={setTodos}   />
      
     </div>
