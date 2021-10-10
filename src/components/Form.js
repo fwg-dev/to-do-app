@@ -9,8 +9,10 @@ import {
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 
 import Todos from "./Todos";
+import './styles/Form.css';
 
-function Form({ todos, setTodos }) {
+
+function Form({ todos, setTodos, setStatus }) {
   const [input, setInput] = useState("");
   // console.log(input);
 
@@ -24,15 +26,10 @@ function Form({ todos, setTodos }) {
     setInput(""); //clears input, sets it back to blank
   };
 
-  const StatusHandler = (event) => {
-    console.log(event);
+  const statusHandler = (event) => {
+    setStatus(event.target.value);
   };
-  // useEffect(() => {
-  //   effect
-  //   return () => {
-  //     cleanup
-  //   }
-  // }, [input])
+
 
   return (
     <div>
@@ -52,11 +49,14 @@ function Form({ todos, setTodos }) {
       >
         <AddCircleIcon />
       </IconButton>
-      
-      <NativeSelect>
-        <option> All</option>
-        <option> Completed</option>
-        <option> Not Completed</option>
+
+      <NativeSelect
+        onChange={statusHandler}
+
+      >
+        <option value="all"> All</option>
+        <option value="completed"> Completed</option>
+        <option value="uncompleted"> Not Completed</option>
       </NativeSelect>
 
     </div>
