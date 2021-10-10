@@ -2,46 +2,47 @@
 //here we can implement CRUD for one sinlge todo
 
 import React from "react";
-import "./Todo.css";
+import "./styles/Todo.css";
 
 import { List, ListItem, ListItemText, IconButton, Checkbox } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-function Todo({text, id, todo, todos, setTodos}) {
+function Todo({ text, id, todo, todos, setTodos }) {
 
   //CRUD events 
   const deleteTodo = () => {
-    setTodos(todos.filter((el) => el.id !== todo.id)); 
+    setTodos(todos.filter((el) => el.id !== todo.id));
     alert("This Task has been deleted!")
-    
+
   };
 
   const completeTodo = () => {
     setTodos(todos.map(item => {
-      if(item.id === todo.id){
+      if (item.id === todo.id) {
         return {
-          ...item, 
+          ...item,
           completed: !item.completed,
         };
       }
-        return item; 
-      })
+      return item;
+    })
     );
 
- }
+  }
 
   return (
     <div>
-      <List className={`todo-item ${todo.completed  ? "completed" : '' }`}>
-      <ListItem >
-         {text}
-        <Checkbox  onChange={completeTodo }  />
-           <IconButton edge="end" aria-label="delete" onClick={deleteTodo } >
-               <DeleteIcon />
-               </IconButton>
+      <List
+        className={`todo-item ${todo.completed ? "completed" : ''}`}>
+        <ListItem >
+          {text}
+          <Checkbox onChange={completeTodo} />
+          <IconButton edge="end" aria-label="delete" onClick={deleteTodo} >
+            <DeleteIcon />
+          </IconButton>
         </ListItem>
       </List>
-    </div>
+    </div >
   );
 }
 
