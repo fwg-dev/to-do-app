@@ -1,28 +1,22 @@
+.todo-form{
+  display:flex;
+  width: 100%;
+  max-width: 700px; 
+  margin: 0 auto;
+  padding: 3px;
+  text-align: center;
+
+}
+
 .form-container{
   display: flex;
+  width: 100%;
+
 }
-form{
-  width: 25rem;
-  background-color: var(--mainWhite);
-  display: flex;
-  justify-content: space-between;
+.input-form{
+  width: 100%;
 }
-form input{
-  flex: 1;
-}
-form input, form button{
-  border: none;
-  outline: none;
-  background-color: var(--mainWhite);
-  font-size: 1rem;
-  padding: .5rem;
-}
-form button{
-  color: var(--primaryColor);
-  cursor: pointer;
-  transition: all .3s ease-in-out;
-}
-form button:hover{
-  background-color: var(--primaryColor);
-  color: var(--mainWhite);
-}
+
+/* .select-container {
+  margin: 30px;
+} */

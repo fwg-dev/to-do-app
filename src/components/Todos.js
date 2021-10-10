@@ -9,28 +9,26 @@ function Todos({ text, todos, todo, setTodos, filteredTodos }) {
 
   return (
     <div >
-      <List>
-        <ListItem >
-          <ul >
-            {filteredTodos.map((todo) => (
-              <Todo
-                todos={todos}
-                setTodos={setTodos}
-                text={todo.text}
-                todo={todo}
-                key={todo.id} />
+      <List className="todos-container">
+        {filteredTodos.map((todo) => (
+          <Todo
+            todos={todos}
+            setTodos={setTodos}
+            text={todo.text}
+            todo={todo}
+            key={todo.id} />
 
-            ))}
-          </ul>
+        ))}
 
-          {/* <Todo /> */}
 
-          {/* <ListItemText primary={props.todos} secondary="deadline"/> */}
+      {/* <Todo /> */}
 
-        </ListItem>
-      </List>
+      {/* <ListItemText primary={props.todos} secondary="deadline"/> */}
 
-    </div>
+
+      </List >
+
+    </div >
 
   )
 }

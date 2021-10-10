@@ -4,17 +4,21 @@
   opacity: 0.5;
 }
 
-li{
-  width: 60%;
-  /* margin-left: 80px; */
-  padding: 3px 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: #000;
-  /* border: ; */
+.todo-text{
+  display: inline-block;
+  width: 100%;
+  text-align: left;
 }
 
-List{
-  background-color: #fff;
+.todo-item{
+  display: flex;
+  width: 100%;
+  max-width: 700px;
+  align-items: center;
+  margin: 10px auto;
+}
+
+.delete-button{
+  margin-left: auto;
+  color: red;
 }

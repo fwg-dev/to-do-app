@@ -32,27 +32,32 @@ function Form({ todos, setTodos, setStatus }) {
 
 
   return (
-    <div>
-      <FormControl>
-        <InputLabel>Write your task here</InputLabel>
-        <Input
-          value={input}
-          onChange={(event) => setInput(event.target.value)}
-        />
-      </FormControl>
+    <div className="todo-form" >
+      <form className="form-container"
+        onSubmit={addTodo}>
 
-      <IconButton
-        disabled={!input}
-        variant="contained"
-        type="submit"
-        onClick={addTodo}
-      >
-        <AddCircleIcon />
-      </IconButton>
 
-      <NativeSelect
+        <FormControl className="input-form">
+          <InputLabel>Write your task here</InputLabel>
+          <Input
+            value={input}
+            onChange={(event) => setInput(event.target.value)}
+          />
+          {/* <IconButton
+          disabled={!input}
+          variant="contained"
+          type="submit"
+          onClick={addTodo}
+        >
+          <AddCircleIcon />
+        </IconButton> */}
+
+        </FormControl>
+      </form>
+
+
+      <NativeSelect className="select-container"
         onChange={statusHandler}
-
       >
         <option value="all"> All</option>
         <option value="completed"> Completed</option>

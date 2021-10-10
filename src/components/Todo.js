@@ -19,6 +19,7 @@ function Todo({ text, id, todo, todos, setTodos }) {
   const completeTodo = () => {
     setTodos(todos.map(item => {
       if (item.id === todo.id) {
+        alert("This Task has been completed!")
         return {
           ...item,
           completed: !item.completed,
@@ -31,21 +32,15 @@ function Todo({ text, id, todo, todos, setTodos }) {
   }
 
   return (
-    <div>
-      <List
-        className={`todo-item ${todo.completed ? "completed" : ''}`}>
-        <ListItem >
-          {text}
-          <Checkbox onChange={completeTodo} />
-          <IconButton edge="end" aria-label="delete" onClick={deleteTodo} >
-            <DeleteIcon />
-          </IconButton>
-        </ListItem>
-      </List>
+    <div
+      className={`todo-item ${todo.completed ? "completed" : ''}`}>
+      <Checkbox onChange={completeTodo} />
+      <span className="todo-text">{text}</span>
+      <IconButton className="delete-button" edge="end" aria-label="delete" onClick={deleteTodo} >
+        <DeleteIcon />
+      </IconButton>
     </div >
   );
 }
 
 export default Todo;
-
-
