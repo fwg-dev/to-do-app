@@ -1,0 +1,20 @@
+.completed {
+  color: red;
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+li{
+  width: 60%;
+  /* margin-left: 80px; */
+  padding: 3px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #000;
+  /* border: ; */
+}
+
+List{
+  background-color: #fff;
+}
