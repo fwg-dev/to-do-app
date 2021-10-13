@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Todo from './Todo';
-import { List, ListItem, ListItemText } from '@mui/material';
+import { List, } from '@mui/material';
 import './styles/Todos.css'
 
 function Todos({ text, todos, todo, setTodos, filteredTodos }) {
@@ -21,9 +21,9 @@ function Todos({ text, todos, todo, setTodos, filteredTodos }) {
         ))}
 
 
-      {/* <Todo /> */}
+        {/* <Todo /> */}
 
-      {/* <ListItemText primary={props.todos} secondary="deadline"/> */}
+        {/* <ListItemText primary={props.todos} secondary="deadline"/> */}
 
 
       </List >

@@ -48,6 +48,9 @@
 
      <ListItem className={`todo-item ${todo.completed  ? "completed" : "" }`}>
 
+  [] we add css selector to css(.completed). we just need to add the class .completed to the all the todos that are done. 
+  [] conditionally render the css class 
+
      <List className={`todo-item ${todo.completed  ? "completed" : '' }`}>
      
      ------------------------------------------------------
@@ -63,3 +66,5 @@
       </Button>
 
       ------------------------------
+
+      <div>{todos.filter(todo => !todo.complered).length} left to do</div>

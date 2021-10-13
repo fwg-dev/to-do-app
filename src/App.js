@@ -4,35 +4,32 @@ import "./App.css";
 import Form from "./components/Form";
 import Todos from "./components/Todos";
 
-
 function App() {
-
   //states
   const [todos, setTodos] = useState([]);
   const [status, setStatus] = useState("all");
   const [filteredTodos, setFilteredTodos] = useState([]);
 
-  //useEffect 
+  //useEffect
   useEffect(() => {
     filterHandler();
+  }, [todos, status]);
 
-  }, [todos, status])
-
-  //functions 
+  //functions
 
   const filterHandler = () => {
     switch (status) {
-      case 'completed':
+      case "completed":
         setFilteredTodos(todos.filter((todo) => todo.completed === true));
         break;
-      case 'uncompleted':
+      case "uncompleted":
         setFilteredTodos(todos.filter((todo) => todo.completed === false));
         break;
       default:
         setFilteredTodos(todos);
         break;
     }
-  }
+  };
 
   return (
     <div className="App">
@@ -42,10 +39,12 @@ function App() {
 
       <div className="container">
         <Form todos={todos} setTodos={setTodos} setStatus={setStatus} />
-        <Todos todos={todos} setTodos={setTodos} filteredTodos={filteredTodos} />
+        <Todos
+          todos={todos}
+          setTodos={setTodos}
+          filteredTodos={filteredTodos}
+        />
       </div>
-
-
     </div>
   );
 }
